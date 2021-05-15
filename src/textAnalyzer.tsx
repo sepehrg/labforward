@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import levenshtein from "./levenshtein";
+import { useTranslation } from "react-i18next";
 
 const TextAnalyzer = () => {
+  const { t } = useTranslation();
+
   const [similarWords, setSimilarWords] = useState<string[]>([]);
   const [frequency, setFrequency] = useState(0);
   const [inputValue, setInputValue] = useState<string>(
@@ -29,18 +32,20 @@ const TextAnalyzer = () => {
 
   const saveInputValue = () => {
     localStorage.setItem("note", inputValue);
-    alert("Successfully saved!");
+    alert(t("successfullySaved"));
   };
+
+  const saveText = t("save");
 
   return (
     <>
       <div className="header">
-        <h1>Text Analyzer</h1>
+        <h1>{t("textAnalyzer")}</h1>
       </div>
       <div className="wrapper">
         <div className="row">
           <label>
-            Enter text:
+            {t("enterText")}
             <input
               type="tea"
               name="note"
@@ -53,20 +58,26 @@ const TextAnalyzer = () => {
               type="button"
               className="saveButton"
               onClick={saveInputValue}
-              value="Save"
+              value={saveText}
             />
           </label>
         </div>
         <div className="row">
-          Similar "Word" entries:{" "}
-          <span data-testid="similar">{similarWords.join(", ")}</span>
+          {t("similarWordEntries")}{" "}
+          <span data-testid="similar">
+            <b>{similarWords.join(", ")}</b>
+          </span>
         </div>
         <div className="row">
-          "Word" frequency: <span data-testid="frequency">{frequency}</span>
+          {t("wordFrequency")}{" "}
+          <span data-testid="frequency">
+            <b>{frequency}</b>
+          </span>
         </div>
       </div>
     </>
   );
 };
+
 
 export default TextAnalyzer;

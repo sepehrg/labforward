@@ -1,0 +1,10 @@
+{
+  "translations": {
+    "textAnalyzer": "Text Analyzer",
+    "enterText": "Enter text",
+    "similarWordEntries": "Similar \"Word\" entries:",
+    "wordFrequency": "\"Word\" frequency:",
+    "save": "Save",
+    "successfullySaved": "Successfully saved!"
+  }
+}
