@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  margin: 20px;
+  color: #333;
+}
+
+.wrapper {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.entryInput {
+  width: 70%;
+  margin-left: 20px;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.saveButton {
+  padding: 3px;
+  margin-left: 10px;
+  border-radius: 3px;
+  background-color: #999;
+  color: #fff;
+  border: none;
+  width: 80px;
+}
+
+.saveButton:hover {
+  background-color: #aaa;
+}
+
+.saveButton:active {
+  background-color: #666;
+}
+
+.row {
+  padding: 10px;
+}
